@@ -23,6 +23,8 @@ public class Main {
         System.out.println(boo);
 
         System.out.println("Hello");
+          deleteDups(n);//remove duplicate elements using hashtable
+       traverse(n);
     }
 
 
@@ -31,6 +33,27 @@ public class Main {
             System.out.println(n.data);
             n = n.next;
         }
+
+    }
+    
+    
+     static void deleteDups(Node n){
+        Hashtable table = new Hashtable();
+        Node newNode = null;
+        Node p = null;
+        while(n!=null){
+            if(table.containsKey(n.data)){
+                newNode.next = n.next;
+            }
+            else{
+                table.put(n.data,true);
+                newNode = n;
+            }
+            n = n.next;
+
+        }
+
+
 
     }
 }
